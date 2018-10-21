@@ -30,12 +30,10 @@ executeScript "RemoveDefaultApps.ps1";
 
 # Browsers
 choco upgrade --yes googlechrome
-choco upgrade --yes adblockpluschrome
-choco upgrade --yes https-everywhere-chrome
 
 choco upgrade --yes Firefox --package-parameters="'l=en-GB'"
-choco upgrade --yes adblockplus-firefox
-choco upgrade --yes https-everywhere-firefox
+
+choco upgrade --yes lastpass
 # end browsers
 
 # productivity tools
@@ -50,6 +48,8 @@ choco upgrade --yes potplayer # Blu-ray - could have been vlc?
 choco upgrade --yes rufus
 choco upgrade --yes handbrake
 choco upgrade --yes chocolateygui
+choco upgrade --yes dropbox
+
 
 Enable-UAC
 Enable-MicrosoftUpdate
