@@ -47,7 +47,6 @@ $applicationList = @(
 	"*BubbleWitch*"
     "king.com*"
     "G5*"
-	"*Dell*"
 	"*Facebook*"
 	"*Keeper*"
 	"*Netflix*"
