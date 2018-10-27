@@ -53,6 +53,12 @@ choco upgrade --yes dropbox
 executeScript "HyperV.ps1";
 RefreshEnv
 
+# command line dev tools
+choco upgrade --yes ag # ag is (grep || ack) on steroids
+choco upgrade --yes jq
+choco upgrade --yes cmder
+Install-Module -Force posh-git #for powersehell integration
+
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula

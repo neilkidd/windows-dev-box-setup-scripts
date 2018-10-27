@@ -8,7 +8,7 @@ These scripts should cover a lot of what you need but will not likely match your
 
 *Note: The one-click links use the following format.  When working out of a different Fork or Branch you'll want to update the links as follows:*
 
-`http://boxstarter.org/package/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/demos/RECIPE_NAME.ps1
+`http://boxstarter.org/package/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/machines/RECIPE_NAME.ps1
 `
 
 |Click link to run  |Description  |
