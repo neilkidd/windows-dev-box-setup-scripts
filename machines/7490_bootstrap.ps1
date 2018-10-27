@@ -82,10 +82,10 @@ choco upgrade --yes vscode
 # visualstudio2017professional
 # visualstudio2017enterprise
 
-# For full install use: choco upgrade -yes visualstudio2017community --package-parameters "'--allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
+# For full install use: choco upgrade --yes visualstudio2017community --package-parameters "'--allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
 
-choco upgrade -yes visualstudio2017community --package-parameters "'--add Microsoft.VisualStudio.Component.Git --allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
-#choco upgrade -yes visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
+choco upgrade --yes visualstudio2017community --package-parameters "'--add Microsoft.VisualStudio.Component.Git --allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
+#choco upgrade --yes visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
 Update-SessionEnvironment #refreshing env due to Git install
 
 #--- UWP Workload and installing Windows Template Studio ---
