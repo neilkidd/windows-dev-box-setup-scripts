@@ -84,21 +84,17 @@ choco upgrade --yes vscode
 
 # For full install use: choco upgrade --yes visualstudio2017community --package-parameters "'--allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
 
-choco install --yes visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git --allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
-#choco upgrade --yes visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
+# next line will do a full install. Beware: 22.64GB and 820 packages and timesout (2018-10-23)
+#choco install --yes visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git --allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
+
+choco upgrade --yes visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
 Update-SessionEnvironment #refreshing env due to Git install
-
-#--- UWP Workload and installing Windows Template Studio ---
-#choco upgrade --yes visualstudio2017buildtools
-#choco upgrade --yes visualstudio2017-workload-netweb
-#choco upgrade --yes visualstudio2017-workload-netcoretools
-#choco upgrade --yes visualstudio2017-workload-webbuildtools
-#choco upgrade --yes visualstudio2017-workload-data
-#choco upgrade --yes visualstudio2017-workload-netcorebuildtools
-#choco upgrade --yes visualstudio2017-workload-azure
-#choco upgrade --yes visualstudio2017-workload-manageddesktop
-#choco upgrade --yes visualstudio2017-workload-universal
-
+# See https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2017
+choco upgrade --yes visualstudio2017-workload-azure 
+choco upgrade --yes visualstudio2017-workload-data
+choco upgrade --yes visualstudio2017-workload-manageddesktop
+choco upgrade --yes visualstudio2017-workload-netcoretools
+choco upgrade --yes visualstudio2017-workload-netweb 
 
 Enable-UAC
 Enable-MicrosoftUpdate
