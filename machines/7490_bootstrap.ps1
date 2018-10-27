@@ -57,11 +57,48 @@ RefreshEnv
 choco upgrade --yes ag # ag is (grep || ack) on steroids
 choco upgrade --yes jq
 
+choco upgrade --yes powershell-core
+choco upgrade --yes azure-cli
+Install-Module -Force Az
+Install-Module -Force posh-git #for powershell integration
+choco upgrade --yes microsoftazurestorageexplorer
+choco upgrade --yes terraform
+choco upgrade --yes packer
+RefreshEnv
+
 choco upgrade --yes cmder
 RefreshEnv
 
-Install-Module -Force posh-git #for powershell integration
-RefreshEnv
+# UI tools
+choco upgrade --yes sysinternals
+choco upgrade --yes vscode
+
+#--- Tools ---
+#--- Installing VS and VS Code with Git
+# See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
+# https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community
+# https://docs.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio#list-of-workload-ids-and-component-ids
+# visualstudio2017community
+# visualstudio2017professional
+# visualstudio2017enterprise
+
+# For full install use: choco upgrade -yes visualstudio2017community --package-parameters "'--allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
+
+choco upgrade -yes visualstudio2017community --package-parameters "'--add Microsoft.VisualStudio.Component.Git --allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
+#choco upgrade -yes visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
+Update-SessionEnvironment #refreshing env due to Git install
+
+#--- UWP Workload and installing Windows Template Studio ---
+#choco upgrade --yes visualstudio2017buildtools
+#choco upgrade --yes visualstudio2017-workload-netweb
+#choco upgrade --yes visualstudio2017-workload-netcoretools
+#choco upgrade --yes visualstudio2017-workload-webbuildtools
+#choco upgrade --yes visualstudio2017-workload-data
+#choco upgrade --yes visualstudio2017-workload-netcorebuildtools
+#choco upgrade --yes visualstudio2017-workload-azure
+#choco upgrade --yes visualstudio2017-workload-manageddesktop
+#choco upgrade --yes visualstudio2017-workload-universal
+
 
 Enable-UAC
 Enable-MicrosoftUpdate
