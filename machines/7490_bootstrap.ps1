@@ -56,8 +56,13 @@ RefreshEnv
 # command line dev tools
 choco upgrade --yes ag # ag is (grep || ack) on steroids
 choco upgrade --yes jq
+
 choco upgrade --yes cmder
+RefreshEnv
+Install-ChocolateyPinnedTaskBarItem -TargetFilePath "${env:ChocolateyToolsLocation}\cmder\cmder.exe"
+
 Install-Module -Force posh-git #for powersehell integration
+RefreshEnv
 
 Enable-UAC
 Enable-MicrosoftUpdate
