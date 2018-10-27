@@ -59,9 +59,8 @@ choco upgrade --yes jq
 
 choco upgrade --yes cmder
 RefreshEnv
-Install-ChocolateyPinnedTaskBarItem -TargetFilePath "${env:ChocolateyToolsLocation}\cmder\cmder.exe"
 
-Install-Module -Force posh-git #for powersehell integration
+Install-Module -Force posh-git #for powershell integration
 RefreshEnv
 
 Enable-UAC
