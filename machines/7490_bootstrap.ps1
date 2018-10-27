@@ -61,15 +61,14 @@ choco upgrade --yes jq
 choco upgrade --yes powershell-core
 choco upgrade --yes azure-cli
 Install-Module -Force Az
-Install-Module -Force posh-git #for powershell integration
 choco upgrade --yes microsoftazurestorageexplorer
+
+Install-Module -Force posh-git #for powershell integration
+
 choco upgrade --yes terraform
 choco upgrade --yes packer
 choco upgrade --yes vagrant
-RefreshEnv
-
 choco upgrade --yes cmder
-RefreshEnv
 
 # UI tools
 choco upgrade --yes sysinternals
