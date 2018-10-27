@@ -61,7 +61,7 @@ choco upgrade --yes jq
 choco upgrade --yes powershell-core
 choco upgrade --yes azure-cli
 Install-Module -Force Az
-choco upgrade --yes microsoftazurestorageexplorer
+# choco upgrade --yes microsoftazurestorageexplorer - fails checksum
 
 Install-Module -Force posh-git #for powershell integration
 
