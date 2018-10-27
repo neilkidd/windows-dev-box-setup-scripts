@@ -49,6 +49,7 @@ choco upgrade --yes rufus
 choco upgrade --yes handbrake.install
 choco upgrade --yes chocolateygui
 choco upgrade --yes dropbox
+choco upgrade --yes speccy
 
 executeScript "HyperV.ps1";
 RefreshEnv
@@ -64,6 +65,7 @@ Install-Module -Force posh-git #for powershell integration
 choco upgrade --yes microsoftazurestorageexplorer
 choco upgrade --yes terraform
 choco upgrade --yes packer
+choco upgrade --yes vagrant
 RefreshEnv
 
 choco upgrade --yes cmder
@@ -72,6 +74,7 @@ RefreshEnv
 # UI tools
 choco upgrade --yes sysinternals
 choco upgrade --yes vscode
+choco upgrade --yes virtualbox
 
 #--- Tools ---
 #--- Installing VS and VS Code with Git
