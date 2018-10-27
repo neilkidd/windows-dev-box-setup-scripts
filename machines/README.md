@@ -14,7 +14,7 @@ These scripts should cover a lot of what you need but will not likely match your
 |Click link to run  |Description  |
 |---------|---------|
 |<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/optimus_bootstrap.ps1'>Optimus (Windows 10)</a>     | De-bloat Windows & Basic SOHO tools |
-|     | Add to this list by submitting a PR with your example configuration!        |
+|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/7490_bootstrap.ps1'>Dell 7490     | Full SOHO and Dev Box |
 
 # Contributing
 Do you want to contribute? We would love your help. Here are our <a href="CONTRIBUTING.md">contribution guidelines</a>.
