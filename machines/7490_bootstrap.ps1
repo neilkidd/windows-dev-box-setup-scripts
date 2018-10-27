@@ -67,8 +67,9 @@ Install-Module -Force posh-git #for powershell integration
 
 choco upgrade --yes terraform
 choco upgrade --yes packer
-choco upgrade --yes vagrant
+# choco upgrade --yes vagrant - never completes :(
 choco upgrade --yes cmder
+RefreshEnv
 
 # UI tools
 choco upgrade --yes sysinternals
