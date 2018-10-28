@@ -52,7 +52,8 @@ choco upgrade --yes dropbox
 choco upgrade --yes speccy
 choco upgrade --yes virtualclonedrive
 
-executeScript "HyperV.ps1";
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+# executeScript "HyperV.ps1";
 RefreshEnv
 
 # command line dev tools
