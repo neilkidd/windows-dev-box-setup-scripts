@@ -87,6 +87,7 @@ choco upgrade --cacheLocation="$ChocoCachePath" --yes sysinternals
 choco upgrade --cacheLocation="$ChocoCachePath" --yes vscode
 choco upgrade --cacheLocation="$ChocoCachePath" --yes virtualbox
 choco upgrade --cacheLocation="$ChocoCachePath" --yes slack
+choco upgrade --cacheLocation="$ChocoCachePath" --yes meld
 
 #--- Tools ---
 #--- Installing VS and VS Code with Git
