@@ -77,6 +77,7 @@ RefreshEnv
 choco upgrade --yes sysinternals
 choco upgrade --yes vscode
 choco upgrade --yes virtualbox
+choco upgrade --yes slack
 
 #--- Tools ---
 #--- Installing VS and VS Code with Git
