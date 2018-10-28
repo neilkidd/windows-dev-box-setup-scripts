@@ -50,6 +50,7 @@ choco upgrade --yes handbrake.install
 choco upgrade --yes chocolateygui
 choco upgrade --yes dropbox
 choco upgrade --yes speccy
+choco upgrade --yes virtualclonedrive
 
 executeScript "HyperV.ps1";
 RefreshEnv
