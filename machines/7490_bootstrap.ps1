@@ -72,8 +72,6 @@ choco upgrade --cacheLocation="$ChocoCachePath" --yes vim
 choco upgrade --cacheLocation="$ChocoCachePath" --yes powershell-core
 choco upgrade --cacheLocation="$ChocoCachePath" --yes azure-cli
 Install-Module -Force Az
-# choco upgrade --yes microsoftazurestorageexplorer - fails checksum
-
 Install-Module -Force posh-git #for powershell integration
 
 choco upgrade --cacheLocation="$ChocoCachePath" --yes terraform
@@ -90,7 +88,7 @@ choco upgrade --cacheLocation="$ChocoCachePath" --yes slack
 choco upgrade --cacheLocation="$ChocoCachePath" --yes meld
 
 #--- Tools ---
-#--- Installing VS and VS Code with Git
+#--- Installing VS with Git
 # See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
 # https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community
 # https://docs.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio#list-of-workload-ids-and-component-ids
@@ -98,9 +96,8 @@ choco upgrade --cacheLocation="$ChocoCachePath" --yes meld
 # visualstudio2017professional
 # visualstudio2017enterprise
 
-# For full install use: choco upgrade --yes visualstudio2017community --package-parameters "'--allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
-
-# next line will do a full install. Beware: 22.64GB and 820 packages and timesout (2018-10-23)
+# The next choco command line will do a full install.
+# Beware: 22.64GB, 820 packages and choco times out (2018-10-23)
 #choco install --yes visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git --allWorkloads --includeRecommended --includeOptional --passive --locale en-US'"
 
 choco upgrade --cacheLocation="$ChocoCachePath" --yes visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
@@ -113,7 +110,6 @@ choco upgrade --cacheLocation="$ChocoCachePath" --yes visualstudio2017-workload-
 choco upgrade --cacheLocation="$ChocoCachePath" --yes visualstudio2017-workload-netweb 
 
 choco upgrade --cacheLocation="$ChocoCachePath" --yes jetbrainstoolbox
-#choco upgrade --yes resharper-ultimate-all --package-parameters="'/PerMachine /NoCpp /NoTeamCityAddin'"
 
 Enable-UAC
 Enable-MicrosoftUpdate
