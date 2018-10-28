@@ -59,6 +59,7 @@ choco upgrade --yes ag # ag is (grep || ack) on steroids
 choco upgrade --yes jq
 choco upgrade --yes curl
 choco upgrade --yes wget
+choco upgrade --yes vim
 
 choco upgrade --yes powershell-core
 choco upgrade --yes azure-cli
@@ -101,6 +102,9 @@ choco upgrade --yes visualstudio2017-workload-data
 choco upgrade --yes visualstudio2017-workload-manageddesktop
 choco upgrade --yes visualstudio2017-workload-netcoretools
 choco upgrade --yes visualstudio2017-workload-netweb 
+
+choco upgrade --yes jetbrainstoolbox
+#choco upgrade --yes resharper-ultimate-all --package-parameters="'/PerMachine /NoCpp /NoTeamCityAddin'"
 
 Enable-UAC
 Enable-MicrosoftUpdate
