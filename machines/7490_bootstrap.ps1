@@ -42,7 +42,7 @@ choco upgrade --cacheLocation="$ChocoCachePath" --yes lastpass
 # end browsers
 
 # productivity tools
-choco upgrade --cacheLocation="$ChocoCachePath"--yes f.lux.install
+choco upgrade --cacheLocation="$ChocoCachePath" --yes f.lux.install
 choco upgrade --cacheLocation="$ChocoCachePath" --yes 7zip.install
 choco upgrade --cacheLocation="$ChocoCachePath" --yes libreoffice-still
 choco upgrade --cacheLocation="$ChocoCachePath" --yes sumatrapdf.install
