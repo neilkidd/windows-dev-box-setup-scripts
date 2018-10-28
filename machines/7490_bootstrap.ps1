@@ -57,6 +57,8 @@ RefreshEnv
 # command line dev tools
 choco upgrade --yes ag # ag is (grep || ack) on steroids
 choco upgrade --yes jq
+choco upgrade --yes curl
+choco upgrade --yes wget
 
 choco upgrade --yes powershell-core
 choco upgrade --yes azure-cli
