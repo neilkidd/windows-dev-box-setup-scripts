@@ -13,7 +13,6 @@ These scripts should cover a lot of what you need but will not likely match your
 
 |Click link to run  |Description  |
 |---------|---------|
-|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/optimus_bootstrap.ps1'>Optimus (Windows 10)</a>     | De-bloat Windows & Basic SOHO tools |
 |<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/7490_bootstrap.ps1'>Dell 7490     | Full SOHO and Dev Box |
 |<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/e6230_bootstrap.ps1'>Dell E6230     | Minimal apps for my daughter|
 
