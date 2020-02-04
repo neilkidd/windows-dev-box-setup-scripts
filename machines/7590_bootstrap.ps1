@@ -33,7 +33,7 @@ if([string]::IsNullOrEmpty($chocoCachePath)) {
 Write-Host "Using chocoCachePath: $chocoCachePath"
 
 if (-not (Test-Path -LiteralPath $chocoCachePath)) {
-    "Creating chocoCachePath dir."
+    Write-Host "Creating chocoCachePath dir."
     New-Item -Path $chocoCachePath -ItemType Directory -Force
 }
 
