@@ -15,7 +15,7 @@ $settingsFilePath = "$settingsDirPath\settings.json"
 $utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
 
 if (-not (Test-Path -LiteralPath $settingsDirPath)) {
-    "Creating chocoCachePath dir."
+    Write-Host "Creating settings dir."
     New-Item -Path $settingsDirPath -ItemType Directory -Force
 }
 
@@ -30,4 +30,5 @@ $jsonTemplate = @"
 }}
 "@ -f $bashPath
 
+# Overwrites existing content
 [System.IO.File]::WriteAllLines($settingsFilePath, $jsonTemplate, $utf8NoBomEncoding)
