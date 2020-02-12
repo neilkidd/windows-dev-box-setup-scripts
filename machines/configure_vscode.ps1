@@ -2,6 +2,7 @@
 # expects code to installed and on path
 # Expects git bash to be on the path.
 
+code --install-extension editorconfig.editorconfig
 code --install-extension AlanWalk.markdown-toc
 code --install-extension bungcip.better-toml
 code --install-extension DavidAnson.vscode-markdownlint
