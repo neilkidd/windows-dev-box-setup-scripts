@@ -55,6 +55,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes wget
 choco upgrade --cacheLocation="$chocoCachePath" --yes vim
 choco upgrade --cacheLocation="$chocoCachePath" --yes git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
 choco upgrade --cacheLocation="$chocoCachePath" --yes terraform
+choco upgrade --cacheLocation="$chocoCachePath" --yes tflint
 choco upgrade --cacheLocation="$chocoCachePath" --yes packer
 choco upgrade --cacheLocation="$chocoCachePath" --yes bitwarden-cli
 choco upgrade --cacheLocation="$chocoCachePath" --yes adoptopenjdk8
