@@ -60,6 +60,8 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes packer
 choco upgrade --cacheLocation="$chocoCachePath" --yes bitwarden-cli
 choco upgrade --cacheLocation="$chocoCachePath" --yes adoptopenjdk8
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-windows-terminal
+## JS tooling
+choco upgrade --cacheLocation="$chocoCachePath" --yes nvm
 
 Install-Module -Force posh-git #for powershell integration
 RefreshEnv
