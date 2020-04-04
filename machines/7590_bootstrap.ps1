@@ -91,7 +91,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes bitwarden
 choco upgrade --cacheLocation="$chocoCachePath" --yes chocolateygui
 choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
-
+choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
 
 choco upgrade --cacheLocation="$chocoCachePath" --yes sql-server-management-studio
 # VS 2019 packages: https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2019
