@@ -9,8 +9,10 @@ code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension redhat.vscode-yaml #all the yamls
 
-# configure (user) settings.json
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension ms-dotnettools.csharp
 
+# configure (user) settings.json
 $settingsDirPath = "$env:APPDATA\Code\User\"
 $settingsFilePath = "$settingsDirPath\settings.json"
 $utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
