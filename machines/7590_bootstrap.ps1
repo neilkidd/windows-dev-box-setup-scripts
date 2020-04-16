@@ -67,9 +67,10 @@ Install-Module -Force posh-git #for powershell integration
 RefreshEnv
 
 # Browsers
-choco upgrade --cacheLocation="$chocoCachePath" --yes Firefox --package-parameters="'l=en-GB'"
-# Chrome last - ideally this is the default for work as we use gsuite.
 choco upgrade --cacheLocation="$chocoCachePath" --yes googlechrome
+
+# Firefox last - so it becomes the default
+choco upgrade --cacheLocation="$chocoCachePath" --yes Firefox --package-parameters="'l=en-GB'"
 # end browsers
 
 # productivity tools
@@ -99,12 +100,14 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes visualstudio2019community 
 
 # pin self updating apps, so we can easily run 'choco upgrade all'
 # https://github.com/chocolatey/choco/wiki/CommandsPin
+choco pin add -n=vscode
 choco pin add -n=Firefox
 choco pin add -n=googlechrome
 choco pin add -n=jetbrainstoolbox
 choco pin add -n=microsoft-teams.install
 choco pin add -n=visualstudio2019community
 choco pin add -n=slack
+choco pin add -n=dropbox
 
 Enable-UAC
 Enable-MicrosoftUpdate
