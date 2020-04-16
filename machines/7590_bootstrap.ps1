@@ -60,6 +60,11 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes packer
 choco upgrade --cacheLocation="$chocoCachePath" --yes bitwarden-cli
 choco upgrade --cacheLocation="$chocoCachePath" --yes adoptopenjdk8
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-windows-terminal
+
+# My blog generator of choice - must dockerise this eventually
+choco upgrade --cacheLocation="$chocoCachePath" --yes hugo-extended --version=0.66.0
+choco pin add -n=hugo-extended --version 0.66.0
+
 ## JS tooling
 choco upgrade --cacheLocation="$chocoCachePath" --yes nvm
 
