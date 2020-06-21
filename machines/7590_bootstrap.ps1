@@ -53,10 +53,12 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes jq
 choco upgrade --cacheLocation="$chocoCachePath" --yes curl
 choco upgrade --cacheLocation="$chocoCachePath" --yes wget
 choco upgrade --cacheLocation="$chocoCachePath" --yes vim
+# choco install git.install
 choco upgrade --cacheLocation="$chocoCachePath" --yes git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
 choco upgrade --cacheLocation="$chocoCachePath" --yes terraform
 choco upgrade --cacheLocation="$chocoCachePath" --yes tflint
 choco upgrade --cacheLocation="$chocoCachePath" --yes packer
+choco upgrade --cacheLocation="$chocoCachePath" --yes vagrant
 choco upgrade --cacheLocation="$chocoCachePath" --yes bitwarden-cli
 choco upgrade --cacheLocation="$chocoCachePath" --yes adoptopenjdk8
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-windows-terminal
@@ -66,7 +68,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes hugo-extended --version=0.
 choco pin add -n=hugo-extended --version 0.66.0
 
 ## JS tooling
-choco upgrade --cacheLocation="$chocoCachePath" --yes nvm
+choco upgrade --cacheLocation="$chocoCachePath" --yes nvm # choco install nvm.portable
 
 Install-Module -Force posh-git #for powershell integration
 RefreshEnv
