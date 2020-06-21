@@ -12,6 +12,9 @@ code --install-extension redhat.vscode-yaml #all the yamls
 code --install-extension ms-vscode-remote.vscode-remote-extensionpack
 code --install-extension ms-dotnettools.csharp
 
+code --install-extension ritwickdey.liveserver
+code --install-extension coenraads.bracket-pair-colorizer
+
 # configure (user) settings.json
 $settingsDirPath = "$env:APPDATA\Code\User\"
 $settingsFilePath = "$settingsDirPath\settings.json"
