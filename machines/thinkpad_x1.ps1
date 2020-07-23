@@ -44,8 +44,8 @@ executeScript "RemoveDefaultApps.ps1";
 
 # https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-# executeScript "HyperV.ps1";
 RefreshEnv
+choco upgrade --cacheLocation="$chocoCachePath" --yes wsl2
 
 # command line dev tools
 choco upgrade --cacheLocation="$chocoCachePath" --yes ag
@@ -53,11 +53,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes jq
 choco upgrade --cacheLocation="$chocoCachePath" --yes curl
 choco upgrade --cacheLocation="$chocoCachePath" --yes wget
 
-choco upgrade --cacheLocation="$chocoCachePath" --yes git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
-choco upgrade --cacheLocation="$chocoCachePath" --yes terraform
-choco upgrade --cacheLocation="$chocoCachePath" --yes tflint
-choco upgrade --cacheLocation="$chocoCachePath" --yes packer
-choco upgrade --cacheLocation="$chocoCachePath" --yes vagrant
+choco upgrade --cacheLocation="$chocoCachePath" --yes git.install --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-windows-terminal
 
 Install-Module -Force posh-git #for powershell integration
@@ -65,32 +61,29 @@ RefreshEnv
 
 # https://stackoverflow.com/questions/29828624/whats-a-chocolatey-install-package
 # use .install where possible
-# choco upgrade --cacheLocation="$chocoCachePath" --yes wsl2
 
-# Browsers
-choco upgrade --cacheLocation="$chocoCachePath" --yes Firefox --package-parameters="'l=en-GB'"
-
-# Chrome last - so it becomes the default. (work machine)
+choco upgrade --cacheLocation="$chocoCachePath" --yes firefox --package-parameters="'/l=en-GB /RemoveDistributionDir'"
+# ORDER MATTERS! Chrome after firefox - so it becomes the default. (work machine)
 choco upgrade --cacheLocation="$chocoCachePath" --yes googlechrome
 
-# end browsers
-
-# productivity tools
-choco upgrade --cacheLocation="$chocoCachePath" --yes jetbrainstoolbox
+choco upgrade --cacheLocation="$chocoCachePath" --yes chocolateygui
 choco upgrade --cacheLocation="$chocoCachePath" --yes 7zip.install
 choco upgrade --cacheLocation="$chocoCachePath" --yes sysinternals
-choco upgrade --cacheLocation="$chocoCachePath" --yes vscode
 choco upgrade --cacheLocation="$chocoCachePath" --yes libreoffice-still
-choco upgrade --cacheLocation="$chocoCachePath" --yes cutepdf
 choco upgrade --cacheLocation="$chocoCachePath" --yes gimp
-choco upgrade --cacheLocation="$chocoCachePath" --yes potplayer #Could have been vlc?
-choco upgrade --cacheLocation="$chocoCachePath" --yes slack
-choco upgrade --cacheLocation="$chocoCachePath" --yes chocolateygui
-choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
-choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
-choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
+choco upgrade --cacheLocation="$chocoCachePath" --yes potplayer
 
+choco upgrade --cacheLocation="$chocoCachePath" --yes 1password
+choco upgrade --cacheLocation="$chocoCachePath" --yes synctrayzor
+choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
+
+choco upgrade --cacheLocation="$chocoCachePath" --yes slack
+choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
+choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
+
+choco upgrade --cacheLocation="$chocoCachePath" --yes jetbrainstoolbox
 choco upgrade --cacheLocation="$chocoCachePath" --yes docker-desktop
+choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
 
 choco upgrade --cacheLocation="$chocoCachePath" --yes sql-server-management-studio
 # VS 2019 packages: https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2019
@@ -98,13 +91,13 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes visualstudio2019community 
 
 # pin self updating apps, so we can easily run 'choco upgrade all'
 # https://github.com/chocolatey/choco/wiki/CommandsPin
-choco pin add -n=vscode
-choco pin add -n=Firefox
+choco pin add -n=vscode.install
+choco pin add -n=firefox
 choco pin add -n=googlechrome
-choco pin add -n=jetbrainstoolbox
 choco pin add -n=microsoft-teams.install
 choco pin add -n=visualstudio2019community
 choco pin add -n=slack
+choco pin add -n=jetbrainstoolbox
 
 Enable-UAC
 Enable-MicrosoftUpdate

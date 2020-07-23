@@ -7,7 +7,7 @@ code --install-extension AlanWalk.markdown-toc
 code --install-extension bungcip.better-toml
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension redhat.vscode-yaml #all the yamls
+code --install-extension redhat.vscode-yaml
 code --install-extension fcrespo82.markdown-table-formatter
 
 code --install-extension ms-vscode-remote.vscode-remote-extensionpack
