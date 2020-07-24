@@ -45,7 +45,10 @@ executeScript "RemoveDefaultApps.ps1";
 # https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 RefreshEnv
+Enable-WindowsOptionalFeature -Online -FeatureName Containers -All
+RefreshEnv
 choco upgrade --cacheLocation="$chocoCachePath" --yes wsl2
+choco upgrade --cacheLocation="$chocoCachePath" --yes docker-desktop
 
 # command line dev tools
 choco upgrade --cacheLocation="$chocoCachePath" --yes ag
@@ -84,9 +87,6 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
 
 # choco upgrade --cacheLocation="$chocoCachePath" --yes jetbrainstoolbox
 
-Enable-WindowsOptionalFeature -Online -FeatureName Containers -All
-RefreshEnv
-choco upgrade --cacheLocation="$chocoCachePath" --yes docker-desktop
 choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
 
 choco upgrade --cacheLocation="$chocoCachePath" --yes sql-server-management-studio
