@@ -73,7 +73,8 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes libreoffice-still
 choco upgrade --cacheLocation="$chocoCachePath" --yes gimp
 choco upgrade --cacheLocation="$chocoCachePath" --yes potplayer
 
-choco upgrade --cacheLocation="$chocoCachePath" --yes 1password
+# choco install 1password -f -not-silent
+# choco upgrade --cacheLocation="$chocoCachePath" --yes 1password
 choco upgrade --cacheLocation="$chocoCachePath" --yes synctrayzor
 choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
 
@@ -81,7 +82,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes slack
 choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
 
-choco upgrade --cacheLocation="$chocoCachePath" --yes jetbrainstoolbox
+# choco upgrade --cacheLocation="$chocoCachePath" --yes jetbrainstoolbox
 choco upgrade --cacheLocation="$chocoCachePath" --yes docker-desktop
 choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
 
@@ -97,7 +98,7 @@ choco pin add -n=googlechrome
 choco pin add -n=microsoft-teams.install
 choco pin add -n=visualstudio2019community
 choco pin add -n=slack
-choco pin add -n=jetbrainstoolbox
+# choco pin add -n=jetbrainstoolbox
 
 Enable-UAC
 Enable-MicrosoftUpdate
