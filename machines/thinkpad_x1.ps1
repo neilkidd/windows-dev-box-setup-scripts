@@ -48,9 +48,7 @@ RefreshEnv
 Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All
 RefreshEnv
 choco upgrade --cacheLocation="$chocoCachePath" --yes wsl2
-wsl --set-default-version 2
-
-choco upgrade --cacheLocation="$chocoCachePath" --yes docker-desktop
+#choco upgrade --cacheLocation="$chocoCachePath" --yes docker-desktop
 
 # # command line dev tools
 # choco upgrade --cacheLocation="$chocoCachePath" --yes ag
