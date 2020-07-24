@@ -83,6 +83,9 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
 
 # choco upgrade --cacheLocation="$chocoCachePath" --yes jetbrainstoolbox
+
+Enable-WindowsOptionalFeature -Online -FeatureName Containers -All
+RefreshEnv
 choco upgrade --cacheLocation="$chocoCachePath" --yes docker-desktop
 choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
 
