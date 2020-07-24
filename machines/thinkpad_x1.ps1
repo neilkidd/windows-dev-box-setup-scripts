@@ -45,8 +45,6 @@ executeScript "RemoveDefaultApps.ps1";
 # https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 RefreshEnv
-Enable-WindowsOptionalFeature -Online -FeatureName Containers -All
-RefreshEnv
 choco upgrade --cacheLocation="$chocoCachePath" --yes wsl2
 choco upgrade --cacheLocation="$chocoCachePath" --yes docker-desktop
 
