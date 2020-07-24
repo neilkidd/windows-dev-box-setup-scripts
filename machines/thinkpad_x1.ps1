@@ -45,7 +45,7 @@ executeScript "RemoveDefaultApps.ps1";
 # https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 RefreshEnv
-Enable-WindowsOptionalFeature -Online -FeatureName Virtual-Machine-Platform -All
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All
 RefreshEnv
 choco upgrade --cacheLocation="$chocoCachePath" --yes wsl2
 wsl --set-default-version 2
