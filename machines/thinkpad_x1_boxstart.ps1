@@ -1,12 +1,13 @@
 # Description: https://boxstarter.org/ Script
 # Author: neilkidd
 # Bootstrap LENOVO thinkpad X1 laptop - windows 10 pro (2004)
-#
-# https://boxstarter.org/InstallBoxstarter (Elevated Powershell v3)
+
+# To run
+# 1.) Open an elevated PS V3 shell ( https://boxstarter.org/InstallBoxstarter )
 # . { iwr -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
-# Open BoxStarter Shell
+# 2. Open BoxStarter Shell from the desktop shortcut
 # $creds = Get-Credential
-# Install-BoxstarterPackage -PackageName {public_location_of_your_boxstarter_install_script} -Credential $creds
+# Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/thinkpad_x1_boxstart.ps1 -Credential $creds
 
 Disable-UAC
 $ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
