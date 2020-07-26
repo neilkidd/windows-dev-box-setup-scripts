@@ -70,7 +70,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes synctrayzor
 choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
 choco upgrade --cacheLocation="$chocoCachePath" --yes slack
 choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
-choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install # TODO: --package-parameters="'OPTIONS="noAutoStart=true" ALLUSERS=1'"
+choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
 choco upgrade --cacheLocation="$chocoCachePath" --yes authy-desktop
 choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
 # Set up vs code
