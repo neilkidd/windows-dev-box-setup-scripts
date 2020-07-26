@@ -71,8 +71,10 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
 choco upgrade --cacheLocation="$chocoCachePath" --yes slack
 choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install # TODO: --package-parameters="'OPTIONS="noAutoStart=true" ALLUSERS=1'"
-choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
 choco upgrade --cacheLocation="$chocoCachePath" --yes authy-desktop
+choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
+# Set up vs code
+code --install-extension shan.code-settings-sync
 
 # pin self updating apps
 # https://github.com/chocolatey/choco/wiki/CommandsPin
