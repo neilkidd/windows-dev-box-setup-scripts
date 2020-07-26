@@ -1,6 +1,9 @@
-# Description: Boxstarter Script
+# Description: https://boxstarter.org/ Script
 # Author: neilkidd
-# Bootstrap LENOVO thinkpad X1 laptop - windows 10 pro 2004
+# Bootstrap LENOVO thinkpad X1 laptop - windows 10 pro (2004)
+#
+# https://boxstarter.org/InstallBoxstarter (Elevated Powershell v3)
+# . { iwr -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
 
 Disable-UAC
 $ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
@@ -25,11 +28,7 @@ function executeScript {
 
 # Workaround choco / boxstarter path too long error
 # https://github.com/chocolatey/boxstarter/issues/241
-$chocoCachePath = "$env:TEMP"
-
-if([string]::IsNullOrEmpty($chocoCachePath)) {
-    $chocoCachePath = "$env:USERPROFILE\AppData\Local\Temp\chocolatey"
-}
+$chocoCachePath = "$env:USERPROFILE\AppData\Local\Temp\chocolatey"
 Write-Host "Using chocoCachePath: $chocoCachePath"
 
 if (-not (Test-Path -LiteralPath $chocoCachePath)) {
@@ -42,29 +41,20 @@ executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
 executeScript "RemoveDefaultApps.ps1";
 
-# # https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
-# Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-# RefreshEnv
-# choco upgrade --cacheLocation="$chocoCachePath" --yes wsl2
-#
-# # command line dev tools
-# choco upgrade --cacheLocation="$chocoCachePath" --yes ag
-# choco upgrade --cacheLocation="$chocoCachePath" --yes jq
-# choco upgrade --cacheLocation="$chocoCachePath" --yes curl
-# choco upgrade --cacheLocation="$chocoCachePath" --yes wget
-
+# Install apps
 choco upgrade --cacheLocation="$chocoCachePath" --yes git.install --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
-# Get from store choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-windows-terminal
 
-Install-Module -Force posh-git #for powershell integration
+Install-Module -Force posh-git
 RefreshEnv
 
-# https://stackoverflow.com/questions/29828624/whats-a-chocolatey-install-package
-# use .install where possible
-
 choco upgrade --cacheLocation="$chocoCachePath" --yes firefox --package-parameters="'/l=en-GB /RemoveDistributionDir'"
-# ORDER MATTERS! Chrome after firefox - so it becomes the default. (work machine)
+# ORDER MATTERS
+# Chrome after firefox - so it becomes the default. (gsuite used at work)
 choco upgrade --cacheLocation="$chocoCachePath" --yes googlechrome
+
+choco upgrade --cacheLocation="$chocoCachePath" --yes sql-server-management-studio
+# VS 2019 packages: https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2019
+choco upgrade --cacheLocation="$chocoCachePath" --yes visualstudio2019community --package-parameters "--add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Data -add Microsoft.VisualStudio.Workload.NetCoreTools --passive --locale en-US"
 
 choco upgrade --cacheLocation="$chocoCachePath" --yes chocolateygui
 choco upgrade --cacheLocation="$chocoCachePath" --yes 7zip.install
@@ -72,36 +62,50 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes sysinternals
 choco upgrade --cacheLocation="$chocoCachePath" --yes libreoffice-still
 choco upgrade --cacheLocation="$chocoCachePath" --yes gimp
 choco upgrade --cacheLocation="$chocoCachePath" --yes potplayer
-
-# choco install 1password -f -not-silent
-# choco upgrade --cacheLocation="$chocoCachePath" --yes 1password
 choco upgrade --cacheLocation="$chocoCachePath" --yes synctrayzor
 choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
-
 choco upgrade --cacheLocation="$chocoCachePath" --yes slack
 choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install # TODO: --package-parameters="'OPTIONS="noAutoStart=true" ALLUSERS=1'"
-
-# choco upgrade --cacheLocation="$chocoCachePath" --yes jetbrainstoolbox
-# choco upgrade --cacheLocation="$chocoCachePath" --yes docker-desktop
-
-
-choco upgrade --cacheLocation="$chocoCachePath" --yes sql-server-management-studio
-# VS 2019 packages: https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2019
-choco upgrade --cacheLocation="$chocoCachePath" --yes visualstudio2019community --package-parameters "--add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Data -add Microsoft.VisualStudio.Workload.NetCoreTools --passive --locale en-US"
-
 choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
+choco upgrade --cacheLocation="$chocoCachePath" --yes authy-desktop
 
-# pin self updating apps, so we can easily run 'choco upgrade all'
+# pin self updating apps
 # https://github.com/chocolatey/choco/wiki/CommandsPin
-choco pin add -n=vscode.install
-choco pin add -n=firefox
-choco pin add -n=googlechrome
+# To update all others, run 'choco upgrade all' from an elevated PS shell
+# or use Chocolatey Gui
+choc0 pin add -n=authy-desktop
+choco pin add -n=Firefox
+choco pin add -n=GoogleChrome
+choco pin add -n=joplin
+choco pin add -n=libreoffice-still
 choco pin add -n=microsoft-teams.install
-choco pin add -n=visualstudio2019community
+choco pin add -n=potplayer
 choco pin add -n=slack
-# choco pin add -n=jetbrainstoolbox
+choco pin add -n=visualstudio2019community
+choco pin add -n=vscode.install
+choco pin add -n=zoom
 
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
+
+###############################################################################
+# TODO Manually
+#
+# WSL2 - Breaks when scripted
+# Manual steps work fine
+# https://docs.microsoft.com/en-us/windows/wsl/install-win10
+#
+# Docker Desktop
+# https://www.docker.com/products/docker-desktop
+#
+# Windows Terminal (from Windows Store)
+# Using the choco package means the latest releases lag and is 'orphaned' from
+# the store releases.
+#
+# 1password.
+# Janky installer is broken for silent installs via choco
+# https://1password.com/downloads/windows/
+#
+###############################################################################
