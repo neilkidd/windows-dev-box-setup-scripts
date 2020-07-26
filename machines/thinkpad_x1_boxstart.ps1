@@ -82,11 +82,11 @@ choco pin add -n=Firefox
 choco pin add -n=GoogleChrome
 choco pin add -n=joplin
 choco pin add -n=libreoffice-still
-choco pin add -n=microsoft-teams.install
+choco pin add -n="microsoft-teams.install"
 choco pin add -n=potplayer
 choco pin add -n=slack
 choco pin add -n=visualstudio2019community
-choco pin add -n=vscode.install
+choco pin add -n="vscode.install"
 choco pin add -n=zoom
 
 Enable-UAC
