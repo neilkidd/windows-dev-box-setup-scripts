@@ -88,6 +88,7 @@ choco pin add -n=libreoffice-still
 choco pin add -n="microsoft-teams.install"
 choco pin add -n=potplayer
 choco pin add -n=slack
+choco pin add -n=synctrayzor
 choco pin add -n=visualstudio2019community
 choco pin add -n="vscode.install"
 choco pin add -n=zoom
