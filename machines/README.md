@@ -13,8 +13,8 @@ These scripts should cover a lot of what you need but will not likely match your
 
 |Click link to run  |Description  |
 |---------|---------|
-|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/thinkpad_x1.ps1'>Lenovo Thinkpad X1 (Windows 10, 2004)| Win 10, VS 2019 Dev Box |
-|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/7590_bootstrap.ps1'>Dell Inspiron 7590   | Win 10, VS 2019 Dev Box |
+|Lenovo Thinkpad X1 (Windows 10, 2004)| Win 10, VS 2019 Dev Box |
+|7590_bootstrap.ps1'>Dell Inspiron 7590   | Win 10, VS 2019 Dev Box |
 |<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/7490_bootstrap.ps1'>Dell 7490     | Full SOHO and Dev Box |
 |<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/e6230_bootstrap.ps1'>Dell E6230     | Minimal apps for my daughter|
 
