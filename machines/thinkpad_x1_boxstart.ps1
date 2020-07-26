@@ -4,6 +4,9 @@
 #
 # https://boxstarter.org/InstallBoxstarter (Elevated Powershell v3)
 # . { iwr -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
+# Open BoxStarter Shell
+# $creds = Get-Credential
+# Install-BoxstarterPackage -PackageName {public_location_of_your_boxstarter_install_script} -Credential $creds
 
 Disable-UAC
 $ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
@@ -74,7 +77,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes authy-desktop
 # https://github.com/chocolatey/choco/wiki/CommandsPin
 # To update all others, run 'choco upgrade all' from an elevated PS shell
 # or use Chocolatey Gui
-choc0 pin add -n=authy-desktop
+choco pin add -n=authy-desktop
 choco pin add -n=Firefox
 choco pin add -n=GoogleChrome
 choco pin add -n=joplin
