@@ -72,6 +72,8 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes slack
 choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
 choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
 choco upgrade --cacheLocation="$chocoCachePath" --yes authy-desktop
+choco upgrade --cacheLocation="$chocoCachePath" --yes dbeaver
+choco upgrade --cacheLocation="$chocoCachePath" --yes postman
 choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
 # Set up vs code
 code --install-extension shan.code-settings-sync
@@ -81,11 +83,13 @@ code --install-extension shan.code-settings-sync
 # To update all others, run 'choco upgrade all' from an elevated PS shell
 # or use Chocolatey Gui
 choco pin add -n=authy-desktop
+choco pin add -n=dbeaver
 choco pin add -n=Firefox
 choco pin add -n=GoogleChrome
 choco pin add -n=joplin
 choco pin add -n=libreoffice-still
 choco pin add -n="microsoft-teams.install"
+choco pin add -n=postman
 choco pin add -n=potplayer
 choco pin add -n=slack
 choco pin add -n=synctrayzor
