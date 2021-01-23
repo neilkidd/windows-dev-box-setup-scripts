@@ -2,6 +2,13 @@
 # Author: neilkidd
 # Bootstrap 7590 laptop - windows 10 pro
 
+# To run
+# 1.) Open an elevated PS V3 shell ( https://boxstarter.org/InstallBoxstarter )
+# . { iwr -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
+# 2. Open BoxStarter Shell from the desktop shortcut
+# $creds = Get-Credential
+# Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/thinkpad_x1_boxstart.ps1 -Credential $creds
+
 Disable-UAC
 $ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
 
@@ -42,80 +49,75 @@ executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
 executeScript "RemoveDefaultAppsExceptDell.ps1";
 
-# https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-# executeScript "HyperV.ps1";
+# Install apps
+choco upgrade --cacheLocation="$chocoCachePath" --yes git.install --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
+
+Install-Module -Force posh-git
 RefreshEnv
 
-# command line dev tools
-choco upgrade --cacheLocation="$chocoCachePath" --yes ag # ag is (grep || ack) on steroids
-choco upgrade --cacheLocation="$chocoCachePath" --yes jq
-choco upgrade --cacheLocation="$chocoCachePath" --yes curl
-choco upgrade --cacheLocation="$chocoCachePath" --yes wget
-choco upgrade --cacheLocation="$chocoCachePath" --yes vim
-# choco install git.install
-choco upgrade --cacheLocation="$chocoCachePath" --yes git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
-choco upgrade --cacheLocation="$chocoCachePath" --yes terraform
-choco upgrade --cacheLocation="$chocoCachePath" --yes tflint
-choco upgrade --cacheLocation="$chocoCachePath" --yes packer
-choco upgrade --cacheLocation="$chocoCachePath" --yes vagrant
-choco upgrade --cacheLocation="$chocoCachePath" --yes bitwarden-cli
-choco upgrade --cacheLocation="$chocoCachePath" --yes adoptopenjdk8
-choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-windows-terminal
-
-# My blog generator of choice - must dockerise this eventually
-choco upgrade --cacheLocation="$chocoCachePath" --yes hugo-extended --version=0.66.0
-choco pin add -n=hugo-extended --version 0.66.0
-
-## JS tooling
-choco upgrade --cacheLocation="$chocoCachePath" --yes nvm # choco install nvm.portable
-
-Install-Module -Force posh-git #for powershell integration
-RefreshEnv
-
-# Browsers
-choco upgrade --cacheLocation="$chocoCachePath" --yes googlechrome
-
+# ORDER MATTERS
 # Firefox last - so it becomes the default
-choco upgrade --cacheLocation="$chocoCachePath" --yes Firefox --package-parameters="'l=en-GB'"
-# end browsers
+choco upgrade --cacheLocation="$chocoCachePath" --yes googlechrome
+choco upgrade --cacheLocation="$chocoCachePath" --yes firefox --package-parameters="'/l=en-GB /RemoveDistributionDir'"
 
-# productivity tools
-choco upgrade --cacheLocation="$chocoCachePath" --yes jetbrainstoolbox
-choco upgrade --cacheLocation="$chocoCachePath" --yes 7zip.install
-choco upgrade --cacheLocation="$chocoCachePath" --yes sysinternals
-choco upgrade --cacheLocation="$chocoCachePath" --yes vscode # choco install vscode.install
-choco upgrade --cacheLocation="$chocoCachePath" --yes libreoffice-still
-choco upgrade --cacheLocation="$chocoCachePath" --yes f.lux.install
-choco upgrade --cacheLocation="$chocoCachePath" --yes cutepdf
-choco upgrade --cacheLocation="$chocoCachePath" --yes gimp
-choco upgrade --cacheLocation="$chocoCachePath" --yes potplayer #Could have been vlc?
-choco upgrade --cacheLocation="$chocoCachePath" --yes dropbox
-choco upgrade --cacheLocation="$chocoCachePath" --yes speccy
-choco upgrade --cacheLocation="$chocoCachePath" --yes virtualclonedrive
-choco upgrade --cacheLocation="$chocoCachePath" --yes virtualbox
-choco upgrade --cacheLocation="$chocoCachePath" --yes slack
-choco upgrade --cacheLocation="$chocoCachePath" --yes bitwarden
-choco upgrade --cacheLocation="$chocoCachePath" --yes chocolateygui
-choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
-choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
-choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
+# Always required!
+choco upgrade --cacheLocation="$chocoCachePath" --yes git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
 
+# Larger apps needing restarts speed up the process
 choco upgrade --cacheLocation="$chocoCachePath" --yes sql-server-management-studio
 # VS 2019 packages: https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2019
 choco upgrade --cacheLocation="$chocoCachePath" --yes visualstudio2019community --package-parameters "--add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Data -add Microsoft.VisualStudio.Workload.NetCoreTools --passive --locale en-US"
 
-# pin self updating apps, so we can easily run 'choco upgrade all'
+choco upgrade --cacheLocation="$chocoCachePath" --yes chocolateygui
+choco upgrade --cacheLocation="$chocoCachePath" --yes 7zip.install
+choco upgrade --cacheLocation="$chocoCachePath" --yes libreoffice-fresh
+choco upgrade --cacheLocation="$chocoCachePath" --yes gimp
+# choco upgrade --cacheLocation="$chocoCachePath" --yes potplayer
+choco upgrade --cacheLocation="$chocoCachePath" --yes synctrayzor
+choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
+choco upgrade --cacheLocation="$chocoCachePath" --yes slack
+choco upgrade --cacheLocation="$chocoCachePath" --yes zoom
+choco upgrade --cacheLocation="$chocoCachePath" --yes microsoft-teams.install
+choco upgrade --cacheLocation="$chocoCachePath" --yes authy-desktop
+choco upgrade --cacheLocation="$chocoCachePath" --yes dbeaver
+choco upgrade --cacheLocation="$chocoCachePath" --yes postman
+choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
+
+# pin self updating apps
 # https://github.com/chocolatey/choco/wiki/CommandsPin
-choco pin add -n=vscode
+# To update all others, run 'choco upgrade all' from an elevated PS shell
+# or use Chocolatey Gui
+choco pin add -n=authy-desktop
+choco pin add -n=dbeaver
 choco pin add -n=Firefox
-choco pin add -n=googlechrome
-choco pin add -n=jetbrainstoolbox
-choco pin add -n=microsoft-teams.install
-choco pin add -n=visualstudio2019community
+choco pin add -n=GoogleChrome
+choco pin add -n=joplin
+choco pin add -n=libreoffice-fresh
+choco pin add -n="microsoft-teams.install"
+choco pin add -n=postman
+#choco pin add -n=potplayer
 choco pin add -n=slack
-choco pin add -n=dropbox
+choco pin add -n=synctrayzor
+choco pin add -n=visualstudio2019community
+choco pin add -n="vscode.install"
+choco pin add -n=zoom
 
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
+
+###############################################################################
+# TODO Manually
+#
+# WSL2 - Breaks when scripted
+# Manual steps work fine
+# https://docs.microsoft.com/en-us/windows/wsl/install-win10
+#
+# Docker Desktop
+# https://www.docker.com/products/docker-desktop
+#
+# Windows Terminal (from Windows Store)
+# Using the choco package means the latest releases lag and is 'orphaned' from
+# the store releases.
+#
+###############################################################################
