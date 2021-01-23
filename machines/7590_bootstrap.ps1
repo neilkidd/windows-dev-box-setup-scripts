@@ -72,6 +72,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes chocolateygui
 choco upgrade --cacheLocation="$chocoCachePath" --yes 7zip.install
 choco upgrade --cacheLocation="$chocoCachePath" --yes libreoffice-fresh
 choco upgrade --cacheLocation="$chocoCachePath" --yes gimp
+choco upgrade --cacheLocation="$chocoCachePath" --yes bitwarden
 # choco upgrade --cacheLocation="$chocoCachePath" --yes potplayer
 choco upgrade --cacheLocation="$chocoCachePath" --yes synctrayzor
 choco upgrade --cacheLocation="$chocoCachePath" --yes joplin
@@ -88,6 +89,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
 # To update all others, run 'choco upgrade all' from an elevated PS shell
 # or use Chocolatey Gui
 choco pin add -n=authy-desktop
+choco pin add -n=bitwarden
 choco pin add -n=dbeaver
 choco pin add -n=Firefox
 choco pin add -n=GoogleChrome
