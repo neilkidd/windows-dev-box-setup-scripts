@@ -7,7 +7,7 @@
 # . { iwr -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
 # 2. Open BoxStarter Shell from the desktop shortcut
 # $creds = Get-Credential
-# Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/thinkpad_x1_boxstart.ps1 -Credential $creds
+# Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/7590_bootstrap.ps1 -Credential $creds
 
 Disable-UAC
 $ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
