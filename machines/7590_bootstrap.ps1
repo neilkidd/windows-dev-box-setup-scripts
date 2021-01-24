@@ -84,6 +84,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes dropbox
 choco upgrade --cacheLocation="$chocoCachePath" --yes dbeaver
 choco upgrade --cacheLocation="$chocoCachePath" --yes postman
 choco upgrade --cacheLocation="$chocoCachePath" --yes vscode.install
+choco upgrade --cacheLocation="$chocoCachePath" --yes jetbrainstoolbox
 
 # pin self updating apps
 # https://github.com/chocolatey/choco/wiki/CommandsPin
@@ -95,6 +96,7 @@ choco pin add -n=dbeaver
 choco pin add -n=dropbox
 choco pin add -n=Firefox
 choco pin add -n=GoogleChrome
+choco pin add -n=jetbrainstoolbox
 choco pin add -n=joplin
 choco pin add -n=libreoffice-fresh
 choco pin add -n="microsoft-teams.install"
