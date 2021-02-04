@@ -1,10 +1,15 @@
 # Windows Dev Box Setup Scripts
 
-This repo was originally forked from [Microsoft's Windows Dev Box Setup Scripts](https://github.com/microsoft/windows-dev-box-setup-scripts). Feel free to go and check that out.
+This repo was originally forked from [Microsoft's Windows Dev Box Setup Scripts](https://github.com/microsoft/windows-dev-box-setup-scripts).
+
+The Microsoft repo appears to have stalled. For simplicity, I've ruthlessly deleted any unused scripts in this repo. Do go and browse the examples in the [parent repo](https://github.com/microsoft/windows-dev-box-setup-scripts).
 
 
 ## How to run the scripts
-Before you begin, please read the [Legal](#Legal) section.
+
+- Before you begin, please read the [Legal](#Legal) section.
+- __Study__ and understand any script that you run
+- Consider forking this repo and creating your own recipes
 
 ### Install Boxstarter Shell
 
