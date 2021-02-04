@@ -28,7 +28,7 @@ The Microsoft repo appears to have stalled. For simplicity, I've ruthlessly dele
     1. Enter account username and password when prompted.
 1. Run installation script
     1. ```powershell
-       Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/7590_bootstrap.ps1 -Credential $creds
+       Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/7590_bootstrap.ps1 -Credential $creds
        ```
 1. Wait and profit
 
