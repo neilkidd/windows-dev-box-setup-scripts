@@ -6,14 +6,14 @@ This repo was originally forked from [Microsoft's Windows Dev Box Setup Scripts]
 ## How to run the scripts
 Before you begin, please read the [Legal](#Legal) section.
 
-## Install Boxstarter Shell
+### Install Boxstarter Shell
 
 1. Open an administrative powershell window 
 1. Enter in a single line. (Ref: [Boxstarter Docs](https://boxstarter.org/InstallBoxstarter) )
     ```powershell
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex (New-Object System.Net.WebClient).DownloadString('https:/boxstarter.org/bootstrapper.ps1')); Get-Boxstarter -Force
     ```
-## Run Scripts from the BoxStarter Shell
+### Run Scripts from the BoxStarter Shell
 
 1. Open Boxstarter shell (From the desktop shortcut)
 1. Configure credentials to enable auto reboot
@@ -27,7 +27,7 @@ Before you begin, please read the [Legal](#Legal) section.
        ```
 1. Wait and profit
 
-## Scripts Available
+### Scripts Available
 
 |Name  |Description  |
 |---------|---------|
