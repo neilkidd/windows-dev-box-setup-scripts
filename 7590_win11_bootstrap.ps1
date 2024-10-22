@@ -46,7 +46,7 @@ choco upgrade --cacheLocation="$chocoCachePath" --yes firefox --package-paramete
 choco upgrade --yes sql-server-management-studio
 
 # vs 2022 packages: https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2022
-choco upgrade --yes visualstudio2022community --package-parameters "--add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Data --add Microsoft.VisualStudio.Workload.NetCrossPlat --add Microsoft.VisualStudio.Workload.Node --passive --locale en-US"
+choco upgrade --yes visualstudio2022community --package-parameters="'--add Microsoft.VisualStudio.Workload.NetWeb --add Microsoft.VisualStudio.Workload.Data --add Microsoft.VisualStudio.Workload.NetCrossPlat --add Microsoft.VisualStudio.Workload.Node --passive --locale en-US'"
 
 choco upgrade --yes 7zip
 choco upgrade --yes authy-desktop
