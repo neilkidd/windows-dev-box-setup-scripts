@@ -14,9 +14,9 @@ The Microsoft repo appears to have stalled. For simplicity, I've ruthlessly dele
 ### Install Boxstarter Shell
 
 1. Open an administrative powershell window 
-1. Enter in a single line. (Ref: [Boxstarter Docs](https://boxstarter.org/InstallBoxstarter) )
+1. Enter in a single line. (Ref: [Boxstarter Docs](https://boxstarter.org/installboxstarter#installing-from-the-web) )
     ```powershell
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex (New-Object System.Net.WebClient).DownloadString('https:/boxstarter.org/bootstrapper.ps1')); Get-Boxstarter -Force
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1')); Get-Boxstarter -Force
     ```
 ### Run Scripts from the BoxStarter Shell
 
@@ -26,9 +26,9 @@ The Microsoft repo appears to have stalled. For simplicity, I've ruthlessly dele
        $creds = Get-Credential
        ```
     1. Enter account username and password when prompted.
-1. Run installation script
+1. Run installation script. EG:
     1. ```powershell
-       Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/7590_bootstrap.ps1 -Credential $creds
+       Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/7590_win11_bootstrap.ps1 -Credential $creds
        ```
 1. Wait and profit
 
@@ -36,6 +36,7 @@ The Microsoft repo appears to have stalled. For simplicity, I've ruthlessly dele
 
 |Name  |Description  |
 |---------|---------|
+|[Dell Inspiron 7590 (Windows 11)](./7590_win11_bootstrap.ps1)| Win 11, VS 2022 Dev Box |
 |[Lenovo Thinkpad X1 (Windows 10, 2004)](./thinkpad_x1_bootstrap.ps1)| Win 10, VS 2019 Dev Box |
 |<a href='./7590_bootstrap.ps1'>Dell Inspiron 7590   | Win 10, VS 2019 Dev Box |
 |<a href='./e6230_bootstrap.ps1'>Dell E6230     | Minimal apps for my daughter|
