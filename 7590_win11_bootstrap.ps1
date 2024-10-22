@@ -3,15 +3,14 @@
 # Bootstrap 7590 laptop - windows 11 Pro (International)
 
 # To run
-# 1.) Open an elevated PS shell ( https://boxstarter.org/InstallBoxstarter )
-# . { iwr -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
+# 1.) Open an elevated PS shell ( https://boxstarter.org/installboxstarter#installing-from-the-web )
+# Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1')); Get-Boxstarter -Force
 # 2. Open BoxStarter Shell from the desktop shortcut
 # $creds = Get-Credential
-# Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/machines/7590_win11_bootstrap.ps1 -Credential $creds
+# Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/neilkidd/windows-dev-box-setup-scripts/master/7590_win11_bootstrap.ps1 -Credential $creds
 
 Disable-UAC
 $ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
-
 
 # https://boxstarter.org/winconfig#set-windowsexploreroptions
 # Show hidden files, Show protected OS files, Show file extensions
