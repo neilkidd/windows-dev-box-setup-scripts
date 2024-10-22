@@ -36,7 +36,7 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 
 # ORDER MATTERS
 # Firefox last - so it becomes the default
-choco upgrade --cacheLocation="$chocoCachePath" --yes googlechrome
+choco upgrade --cacheLocation="$chocoCachePath" --yes googlechrome --ignore-checksums # A risk, but see the choco site
 choco upgrade --cacheLocation="$chocoCachePath" --yes firefox --package-parameters="'/l=en-GB /RemoveDistributionDir'"
 
 # Might not be required yet - I want to validate what comes with VS first
