@@ -19,6 +19,13 @@ Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtec
 # https://ccmexec.com/2021/10/modifying-windows-11-start-button-location-and-taskbar-icons-during-osd-autopilot/
 # Send the task bar to the ruddy left
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name TaskbarAl -Type DWord -Value 0
+# Set Task bar to smallest icons
+Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name TaskbarSi -Value 0
+# Auto hide the taskbar
+$StuckRects3Path = 'HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3'
+$RegValues = (Get-ItemProperty -Path $StuckRects3Path).Settings
+$RegValues[8] = 3
+Set-ItemProperty -Path $StuckRects3Path -Name Settings -Value $RegValues
 
 # TRY LATER #--- File Explorer Settings ---
 #
