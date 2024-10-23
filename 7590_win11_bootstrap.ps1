@@ -47,7 +47,7 @@ choco upgrade --yes googlechrome --ignore-checksums # A risk, but see the choco 
 choco upgrade --yes firefox --package-parameters="'/l=en-GB /RemoveDistributionDir'" --ignore-checksums # A risk, but see the choco site
 
 # Might not be required yet - I want to validate what comes with VS first
-# choco upgrade --yes git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
+choco upgrade --yes git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
 
 # Larger apps needing restarts speed up the process
 choco upgrade --yes sql-server-management-studio
