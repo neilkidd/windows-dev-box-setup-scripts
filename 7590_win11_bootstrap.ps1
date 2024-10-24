@@ -84,6 +84,7 @@ choco upgrade --yes vscode
 choco pin add -n=authy-desktop
 choco pin add -n=bitwarden
 choco pin add -n=dbeaver
+choco pin add -n=docker-desktop
 choco pin add -n=dropbox
 choco pin add -n=Firefox
 choco pin add -n=GoogleChrome
