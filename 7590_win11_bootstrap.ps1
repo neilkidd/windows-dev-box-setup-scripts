@@ -106,3 +106,8 @@ choco pin add -n=vscode
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
+
+####################################
+# WSL
+# wsl.exe --install -d Ubuntu-24.04
+####################################
