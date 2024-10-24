@@ -48,6 +48,7 @@ choco upgrade --yes firefox --package-parameters="'/l=en-GB /RemoveDistributionD
 
 # Might not be required yet - I want to validate what comes with VS first
 choco upgrade --yes git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
+choco upgrade --yes docker-desktop
 
 # Larger apps needing restarts speed up the process
 choco upgrade --yes sql-server-management-studio
