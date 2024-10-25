@@ -47,11 +47,10 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 choco upgrade --yes googlechrome --ignore-checksums # A risk, but see the choco site
 choco upgrade --yes firefox --package-parameters="'/l=en-GB /RemoveDistributionDir'" --ignore-checksums # A risk, but see the choco site
 
-# Might not be required yet - I want to validate what comes with VS first
 choco upgrade --yes git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal /NoAutoCrlf'"
 choco upgrade --yes docker-desktop
 
-# Larger apps needing restarts speed up the process
+# In general, installing larger apps that need OS reboots speeds up the process
 choco upgrade --yes sql-server-management-studio
 
 # vs 2022 packages: https://learn.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2022
