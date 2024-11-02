@@ -62,7 +62,7 @@ choco upgrade --yes bitwarden
 choco upgrade --yes chocolateygui
 choco upgrade --yes dbeaver
 choco upgrade --yes dropbox
-choco upgrade --yes flux
+choco upgrade --yes f.lux
 choco upgrade --yes gimp
 choco upgrade --yes jetbrainstoolbox
 choco upgrade --yes joplin
@@ -87,7 +87,7 @@ choco pin add -n=dbeaver
 choco pin add -n=docker-desktop
 choco pin add -n=dropbox
 choco pin add -n=Firefox
-choco pin add -n=flux
+choco pin add -n="f.lux"
 choco pin add -n=GoogleChrome
 choco pin add -n=jetbrainstoolbox
 choco pin add -n=joplin
@@ -97,7 +97,6 @@ choco pin add -n=visualstudio2022community
 choco pin add -n=vscode
 
 # Deferred for now
-#choco pin add -n="f.lux.install"
 #choco pin add -n="microsoft-teams.install"
 #choco pin add -n=postman
 #choco pin add -n=potplayer
