@@ -62,6 +62,7 @@ choco upgrade --yes bitwarden
 choco upgrade --yes chocolateygui
 choco upgrade --yes dbeaver
 choco upgrade --yes dropbox
+choco upgrade --yes flux
 choco upgrade --yes gimp
 choco upgrade --yes jetbrainstoolbox
 choco upgrade --yes joplin
@@ -75,7 +76,6 @@ choco upgrade --yes vscode
 #choco upgrade --yes zoom
 #choco upgrade --yes microsoft-teams.install
 #choco upgrade --yes postman
-#choco upgrade --yes f.lux.install
 
 # pin self updating apps
 # https://github.com/chocolatey/choco/wiki/CommandsPin
@@ -87,6 +87,7 @@ choco pin add -n=dbeaver
 choco pin add -n=docker-desktop
 choco pin add -n=dropbox
 choco pin add -n=Firefox
+choco pin add -n=flux
 choco pin add -n=GoogleChrome
 choco pin add -n=jetbrainstoolbox
 choco pin add -n=joplin
